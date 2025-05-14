@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk0w70ye14q4d"]
+
+[ext_resource type="Script" uid="uid://cx86knt5hau0l" path="res://pocisk.gd" id="1_loxlw"]
+[ext_resource type="Texture2D" uid="uid://dhcltblad36ke" path="res://sr2040cc8fb28aws3.png" id="2_ch8e8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_loxlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ch8e8")
+}],
+"loop": true,
+"name": &"strzał",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfb0a"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_loxlw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_loxlw")
+animation = &"strzał"
+frame_progress = 0.184845
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tfb0a")

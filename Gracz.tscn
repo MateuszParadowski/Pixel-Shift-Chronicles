@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://n523ishfuq33"]
+
+[ext_resource type="Script" uid="uid://dtbw4vknlwu0c" path="res://gracz.gd" id="1_h8a5u"]
+[ext_resource type="Texture2D" uid="uid://jfbu4ufwx1mq" path="res://minipix5.png" id="2_h8a5u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrmrg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h8a5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os8cv"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_h8a5u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lrmrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_os8cv")

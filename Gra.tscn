@@ -14,7 +14,7 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_ektgh")]
+[node name="CharacterBody2D" parent="." groups=["drabina"] instance=ExtResource("1_ektgh")]
 position = Vector2(-177, 171)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_vtp5b")]
@@ -27,23 +27,23 @@ position = Vector2(3662.37, 0)
 scale = Vector2(1.02293, 1)
 
 [node name="StaticBody2D" parent="StaticBody2D/StaticBody2D" instance=ExtResource("2_vtp5b")]
-position = Vector2(-67.279, -612)
+position = Vector2(27.3259, -616)
 scale = Vector2(1.02293, 1)
 
-[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D" instance=ExtResource("2_vtp5b")]
-position = Vector2(12664.2, -2536)
-scale = Vector2(2.83766, 4.41628)
+[node name="StaticBody2D2" parent="StaticBody2D/StaticBody2D" instance=ExtResource("2_vtp5b")]
+position = Vector2(12981.9, -3153)
+scale = Vector2(2.90273, 4.41628)
 
-[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D" instance=ExtResource("2_vtp5b")]
+[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D2" instance=ExtResource("2_vtp5b")]
 position = Vector2(4582.39, 2.71719)
 scale = Vector2(0.850373, 0.985287)
 
-[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D" instance=ExtResource("2_vtp5b")]
+[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D2/StaticBody2D" instance=ExtResource("2_vtp5b")]
 position = Vector2(18017.6, 158.114)
 scale = Vector2(2.24716, 0.985287)
 
 [node name="Area2D" parent="." instance=ExtResource("3_vtp5b")]
-position = Vector2(673, 88)
+position = Vector2(714, 76)
 scale = Vector2(1.95969, 2.85478)
 
 [node name="Area2D" parent="Area2D" instance=ExtResource("3_vtp5b")]

@@ -20,6 +20,10 @@ config/main_scene="uid://8su4a6a5kudm"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[global_group]
+
+drabina=""
+
 [input]
 
 move_left={

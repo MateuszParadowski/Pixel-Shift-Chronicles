@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://vv06nw05jbfs"]
+
+[ext_resource type="Texture2D" uid="uid://ky1uxeqfdqo2" path="res://rock with grass (16-bit).png" id="1_yv4eo"]
+[ext_resource type="Script" uid="uid://rqa5ott4lkuo" path="res://moving_platform_h.gd" id="2_krxej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1wnb"]
+size = Vector2(279, 171)
+
+[node name="MovingPlatformV" type="StaticBody2D"]
+script = ExtResource("2_krxej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yv4eo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-39, 217)
+shape = SubResource("RectangleShape2D_q1wnb")

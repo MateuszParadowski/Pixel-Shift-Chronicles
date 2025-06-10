@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://coe6eedkx3x4j"]
+
+[ext_resource type="Script" uid="uid://cv1rb14e558iv" path="res://triggered_platform_v.gd" id="1_anebr"]
+[ext_resource type="Texture2D" uid="uid://ky1uxeqfdqo2" path="res://rock with grass (16-bit).png" id="2_s1mql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1wnb"]
+size = Vector2(279, 171)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anebr"]
+radius = 189.5
+height = 379.0
+
+[node name="TriggeredPlatform_V" type="StaticBody2D"]
+script = ExtResource("1_anebr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s1mql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-40, 217)
+shape = SubResource("RectangleShape2D_q1wnb")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-43.5, 221.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_anebr")

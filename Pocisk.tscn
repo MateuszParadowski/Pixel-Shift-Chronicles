@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk0w70ye14q4d"]
 
 [ext_resource type="Script" uid="uid://cx86knt5hau0l" path="res://pocisk.gd" id="1_loxlw"]
-[ext_resource type="Texture2D" uid="uid://dhcltblad36ke" path="res://sr2040cc8fb28aws3.png" id="2_ch8e8"]
+[ext_resource type="Texture2D" uid="uid://7yu843pm3df" path="res://flying bullet.png" id="2_loxlw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_loxlw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ch8e8")
+"texture": ExtResource("2_loxlw")
 }],
 "loop": true,
 "name": &"strzał",

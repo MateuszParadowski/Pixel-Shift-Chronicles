@@ -1,26 +1,177 @@
-[gd_scene load_steps=5 format=3 uid="uid://n523ishfuq33"]
+[gd_scene load_steps=20 format=3 uid="uid://n523ishfuq33"]
 
 [ext_resource type="Script" uid="uid://dtbw4vknlwu0c" path="res://gracz.gd" id="1_h8a5u"]
-[ext_resource type="Texture2D" uid="uid://jfbu4ufwx1mq" path="res://minipix5.png" id="2_h8a5u"]
+[ext_resource type="Texture2D" uid="uid://y0fr274r7eqp" path="res://MainCharacter.png" id="2_h8a5u"]
+[ext_resource type="Texture2D" uid="uid://buw65vr31r77x" path="res://MainCharacter Gun AimShot.png" id="2_uysur"]
+[ext_resource type="Texture2D" uid="uid://7rgrf8augk2d" path="res://MainCharacter Gun AimShot 5.png" id="3_8534l"]
+[ext_resource type="Texture2D" uid="uid://3t2ncbkf66rn" path="res://MainCharacter Gun.png" id="3_uklnb"]
+[ext_resource type="Texture2D" uid="uid://rgng7edkd5js" path="res://MainCharacter Jump.png" id="4_i7bvb"]
+[ext_resource type="Texture2D" uid="uid://d2vv1qj2q6thl" path="res://MainCharacter Gun AimShot 4.png" id="4_p4u23"]
+[ext_resource type="Texture2D" uid="uid://dh1w41ht1nvat" path="res://MainCharacter Gun AimShot 3.png" id="5_mgq68"]
+[ext_resource type="Texture2D" uid="uid://bdgtu7a3f38kc" path="res://MainCharacter Jump Gun.png" id="5_uoa3i"]
+[ext_resource type="Texture2D" uid="uid://cf348xt0hd0fq" path="res://MainCharacter WalkRun.png" id="6_d2fcw"]
+[ext_resource type="Texture2D" uid="uid://ckjl5i876ecce" path="res://MainCharacter Gun AimShot 2.png" id="6_r3nau"]
+[ext_resource type="Texture2D" uid="uid://c5mv5dxgmsixj" path="res://MainCharacter Climb.png" id="7_ltyxy"]
+[ext_resource type="Texture2D" uid="uid://bkko6aluvak56" path="res://MainCharacter Climb 2.png" id="8_47vrx"]
+[ext_resource type="Texture2D" uid="uid://3ipchl8ecxxx" path="res://MainCharacter Croutch.png" id="9_5m2o0"]
+[ext_resource type="Texture2D" uid="uid://ujkcbcfqh1tu" path="res://MainCharacter Defeated.png" id="10_4i432"]
+[ext_resource type="Texture2D" uid="uid://dp8p5i80wvs6a" path="res://MainCharacter Damage.png" id="11_8tyte"]
+[ext_resource type="Texture2D" uid="uid://dfg0yh825e0io" path="res://MainCharacter WalkRun Gun.png" id="17_twm62"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lrmrg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_uysur")
+}],
+"loop": true,
+"name": &"aim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8534l")
+}],
+"loop": true,
+"name": &"aim_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p4u23")
+}],
+"loop": true,
+"name": &"aim_down_leftright",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mgq68")
+}],
+"loop": true,
+"name": &"aim_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_r3nau")
+}],
+"loop": true,
+"name": &"aim_up_leftright",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ltyxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_47vrx")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5m2o0")
+}],
+"loop": true,
+"name": &"croutch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4i432")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8tyte")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_h8a5u")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uklnb")
+}],
+"loop": true,
+"name": &"idle_gun",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i7bvb")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uoa3i")
+}],
+"loop": true,
+"name": &"jump_gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_d2fcw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_twm62")
+}],
+"loop": true,
+"name": &"run_gun",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_d2fcw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_twm62")
+}],
+"loop": true,
+"name": &"walk_gun",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os8cv"]
+size = Vector2(232, 402)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Gracz" type="CharacterBody2D"]
 script = ExtResource("1_h8a5u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lrmrg")
+animation = &"aim_down_leftright"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-26, 112)
 shape = SubResource("RectangleShape2D_os8cv")
+
+[node name="Camera2D" type="Camera2D" parent="."]

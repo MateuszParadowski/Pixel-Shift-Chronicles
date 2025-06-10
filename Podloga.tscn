@@ -1,17 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv01t2ly8i5jp"]
 
-[ext_resource type="Texture2D" uid="uid://c7bgtdvkyi040" path="res://tutorial.png" id="1_ph8gy"]
+[ext_resource type="Texture2D" uid="uid://cgf542naysnff" path="res://rock with grass.png" id="1_ph8gy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58404"]
-size = Vector2(3649, 648)
+size = Vector2(3271.87, 421.91)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Podłoga" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1014.5, 690)
+position = Vector2(868.5, 712)
+scale = Vector2(1.28214, 1.48373)
 shape = SubResource("RectangleShape2D_58404")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1015, 709)
-scale = Vector2(8.118, 1.609)
+position = Vector2(1507, -200)
+scale = Vector2(15.2925, 4.04617)
 texture = ExtResource("1_ph8gy")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://v6iana627mgq"]
+
+[ext_resource type="Texture2D" uid="uid://cfl115xahceac" path="res://rock block.png" id="1_rnoeq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58404"]
+size = Vector2(3731, 712)
+
+[node name="Ściana&Podłoga" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1031.99, 699.499)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_58404")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1005.04, 1371.5)
+rotation = -3.14159
+scale = Vector2(2.61178, 8.46192)
+texture = ExtResource("1_rnoeq")

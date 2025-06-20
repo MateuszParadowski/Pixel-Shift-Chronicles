@@ -1,12 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://nemxmwemc51a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kacqa"]
-size = Vector2(99, 452)
+size = Vector2(71, 279)
 
 [node name="drabina" type="Area2D" groups=["drabina"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(39.5, 14)
+position = Vector2(65.5, 11.5)
 shape = SubResource("RectangleShape2D_kacqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

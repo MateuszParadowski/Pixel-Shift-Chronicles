@@ -161,17 +161,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os8cv"]
-size = Vector2(232, 402)
+size = Vector2(233, 388)
 
 [node name="Gracz" type="CharacterBody2D"]
 script = ExtResource("1_h8a5u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lrmrg")
-animation = &"aim_down_leftright"
+animation = &"climb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-26, 112)
+position = Vector2(-26.5, 119)
 shape = SubResource("RectangleShape2D_os8cv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

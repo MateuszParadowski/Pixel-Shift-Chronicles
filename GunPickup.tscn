@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe2gp"]
 size = Vector2(2257, 691)
 
-[node name="GunPickup" type="Area2D"]
+[node name="GunPickup" type="Area2D" groups=["pickup_gun"]]
 collision_layer = 15
 collision_mask = 15
 

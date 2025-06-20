@@ -23,7 +23,7 @@ z_index = 1
 position = Vector2(-177, 171)
 
 [node name="LadderDetector" type="Area2D" parent="CharacterBody2D"]
-collision_mask = 15
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/LadderDetector"]
 position = Vector2(-24, 108)
@@ -55,7 +55,7 @@ position = Vector2(18017.6, 158.114)
 scale = Vector2(2.24716, 0.985287)
 
 [node name="Ladder1" parent="." instance=ExtResource("3_vtp5b")]
-position = Vector2(672, 45)
+position = Vector2(719, -195)
 scale = Vector2(1.992, 2.537)
 
 [node name="Area2D" parent="Ladder1" instance=ExtResource("3_vtp5b")]
@@ -87,8 +87,8 @@ position = Vector2(492.775, -1.0612)
 scale = Vector2(1.02112, 1.01442)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ladder1"]
-position = Vector2(68.7751, 29.9566)
-scale = Vector2(2, 1.98703)
+position = Vector2(45.6827, 126.527)
+scale = Vector2(2, 2.10038)
 texture = ExtResource("4_43q1k")
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("4_eyta3")]

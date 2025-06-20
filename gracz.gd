@@ -62,16 +62,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func update_animation(direction: float):
+	if on_ladder:
+		if Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down"):
+			anim.play("climb")
+		return
+
 	if crouching:
 		anim.play("croutch")
 		return
 
 	if not is_on_floor():
 		anim.play("jump_gun" if has_gun else "jump")
-		return
-
-	if on_ladder:
-		anim.play("climb")
 		return
 
 	if is_shooting:
@@ -82,12 +83,8 @@ func update_animation(direction: float):
 		match get_aim_anim_name():
 			"up":
 				anim.play("aim_up")
-			"upleftright":
-				anim.play("aim_upleftright")
 			"down":
 				anim.play("aim_down")
-			"downleftright":
-				anim.play("aim_downleftright")
 			"forward":
 				anim.play("run_gun" if direction != 0 else "idle_gun")
 	else:
@@ -95,9 +92,9 @@ func update_animation(direction: float):
 
 func get_aim_anim_name() -> String:
 	if aim_direction.y < -0.5:
-		return "upleftright" if abs(aim_direction.x) > 0.5 else "up"
+		return "up"
 	elif aim_direction.y > 0.5:
-		return "downleftright" if abs(aim_direction.x) > 0.5 else "down"
+		return "down"
 	else:
 		return "forward"
 
@@ -111,6 +108,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("drabina"):
 		on_ladder = true
 	if area.is_in_group("pickup_gun"):
+		print("podniesiono bron")
 		has_gun = true
 		area.queue_free()
 
@@ -132,3 +130,23 @@ func heal(amount: int):
 
 func die():
 	queue_free()
+
+func _on_ladder_1_body_entered(body: Node2D) -> void:
+	if body == self:
+		on_ladder = true
+
+func _on_ladder_1_body_exited(body: Node2D) -> void:
+	if body == self:
+		on_ladder = false
+
+func _on_ladder_detector_area_entered(area: Area2D) -> void:
+	if area.is_in_group("drabina"):
+		on_ladder = true
+	if area.is_in_group("pickup_gun"):
+		print("podniesiono bron")
+		has_gun = true
+		area.queue_free()
+
+func _on_ladder_detector_area_exited(area: Area2D) -> void:
+	if area.is_in_group("drabina"):
+		on_ladder = false

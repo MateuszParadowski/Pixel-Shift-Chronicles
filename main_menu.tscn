@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://iu78c2t7568i"]
+
+[sub_resource type="GDScript" id="GDScript_rhts7"]
+script/source = "extends Control
+
+func _on_play_button_pressed() -> void:
+	var error = get_tree().change_scene_to_file(\"res://Gra.tscn\")
+	if error != OK:
+		push_error(\"❌ Не вдалося завантажити сцену Gra.tscn\")
+
+func _on_settings_button_pressed() -> void:
+	print(\"⚙️ Відкрито меню налаштувань (ще не реалізовано)\")
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_quit_button_focus_exited() -> void:
+	pass # Replace with function body.
+"
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_rhts7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 4.0
+offset_right = 1155.0
+offset_bottom = 630.0
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 4.0
+offset_right = 481.0
+offset_bottom = 27.0
+scale = Vector2(4, 4)
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="focus_exited" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_focus_exited"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,172 +1,26 @@
-[gd_scene load_steps=15 format=3 uid="uid://8su4a6a5kudm"]
+[gd_scene load_steps=9 format=3 uid="uid://8su4a6a5kudm"]
 
 [ext_resource type="PackedScene" uid="uid://n523ishfuq33" path="res://Gracz.tscn" id="1_ektgh"]
-[ext_resource type="PackedScene" uid="uid://bv01t2ly8i5jp" path="res://Podloga.tscn" id="2_vtp5b"]
+[ext_resource type="PackedScene" uid="uid://c7njj3s4ljhb" path="res://boar.tscn" id="3_7102m"]
 [ext_resource type="PackedScene" uid="uid://nemxmwemc51a" path="res://drabina.tscn" id="3_vtp5b"]
-[ext_resource type="Texture2D" uid="uid://ds7mnh0njrris" path="res://ladder1.png" id="4_43q1k"]
-[ext_resource type="PackedScene" uid="uid://cjxw3wsvvd0la" path="res://Sciana.tscn" id="4_eyta3"]
-[ext_resource type="PackedScene" uid="uid://v6iana627mgq" path="res://Sciana&Podloga.tscn" id="5_8jsco"]
-[ext_resource type="PackedScene" uid="uid://coe6eedkx3x4j" path="res://TriggeredPlatform_H.tscn" id="6_7euit"]
-[ext_resource type="PackedScene" uid="uid://bmemfy3h1va1d" path="res://TriggeredPlatform_V.tscn" id="7_27ivp"]
-[ext_resource type="PackedScene" uid="uid://cv5urpidi2bx6" path="res://MovingPlatform_H.tscn" id="9_43q1k"]
-[ext_resource type="PackedScene" uid="uid://2847yjjjejx6" path="res://TrapPlatform.tscn" id="10_ay3kv"]
+[ext_resource type="PackedScene" uid="uid://nwcitt1jtd3" path="res://snail.tscn" id="7_w14rk"]
+[ext_resource type="PackedScene" uid="uid://cew0mfhtji4ks" path="res://small_bee.tscn" id="9_4xi00"]
 [ext_resource type="PackedScene" uid="uid://c3tfplqxemgme" path="res://GunPickup.tscn" id="11_j06bu"]
 [ext_resource type="TileSet" uid="uid://sluo1ngho8up" path="res://mapa/mapa.tres" id="13_ay3kv"]
 [ext_resource type="Texture2D" uid="uid://c4jk7euvitjtb" path="res://GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="14_u50l4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_43q1k"]
-size = Vector2(224, 386)
-
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." groups=["drabina"] instance=ExtResource("1_ektgh")]
+[node name="Gracz" parent="." instance=ExtResource("1_ektgh")]
+process_mode = 1
 z_index = 4
 y_sort_enabled = true
-position = Vector2(-103, 277)
-
-[node name="LadderDetector" type="Area2D" parent="CharacterBody2D"]
-position = Vector2(-4, -4)
+position = Vector2(-913, -1286)
+collision_layer = 15
 collision_mask = 15
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/LadderDetector"]
-position = Vector2(-24, 108)
-shape = SubResource("RectangleShape2D_43q1k")
-
-[node name="StaticBody2D" parent="." instance=ExtResource("2_vtp5b")]
-z_index = -1
-position = Vector2(5699, -6513)
-scale = Vector2(0.465, 1)
-
-[node name="StaticBody2D" parent="StaticBody2D" instance=ExtResource("2_vtp5b")]
-position = Vector2(3662.37, 0)
-scale = Vector2(1.02293, 1)
-
-[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D" instance=ExtResource("2_vtp5b")]
-position = Vector2(27.3259, -616)
-scale = Vector2(1.02293, 1)
-
-[node name="StaticBody2D2" parent="StaticBody2D/StaticBody2D" instance=ExtResource("2_vtp5b")]
-position = Vector2(12981.9, -3153)
-scale = Vector2(2.90273, 4.41628)
-
-[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D2" instance=ExtResource("2_vtp5b")]
-position = Vector2(4582.39, 2.71719)
-scale = Vector2(0.850373, 0.985287)
-
-[node name="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D2/StaticBody2D" instance=ExtResource("2_vtp5b")]
-position = Vector2(18017.6, 158.114)
-scale = Vector2(2.24716, 0.985287)
-
-[node name="Ladder1" parent="." instance=ExtResource("3_vtp5b")]
-position = Vector2(12316, 2603)
-scale = Vector2(1.992, 2.537)
-
-[node name="Area2D" parent="Ladder1" instance=ExtResource("3_vtp5b")]
-position = Vector2(2275.87, -349.239)
-scale = Vector2(1.95969, 3.02658)
-
-[node name="Area2D" parent="Ladder1/Area2D" instance=ExtResource("3_vtp5b")]
-position = Vector2(3845.45, 85.3961)
-scale = Vector2(1.95969, 1.92367)
-
-[node name="Area2D" parent="Ladder1/Area2D/Area2D" instance=ExtResource("3_vtp5b")]
-position = Vector2(2694.67, -197.167)
-scale = Vector2(1.73631, 0.453231)
-
-[node name="Area2D2" parent="Ladder1/Area2D/Area2D" instance=ExtResource("3_vtp5b")]
-position = Vector2(1837.37, -349.943)
-scale = Vector2(0.910073, 0.293537)
-
-[node name="Area2D3" parent="Ladder1/Area2D/Area2D" instance=ExtResource("3_vtp5b")]
-position = Vector2(2855.58, -481.82)
-scale = Vector2(0.477007, 0.320143)
-
-[node name="Area2D4" parent="Ladder1/Area2D/Area2D" instance=ExtResource("3_vtp5b")]
-position = Vector2(-945.66, -245.574)
-scale = Vector2(0.693252, 0.333764)
-
-[node name="Area2D4" parent="Ladder1/Area2D/Area2D/Area2D4" instance=ExtResource("3_vtp5b")]
-position = Vector2(492.775, -1.0612)
-scale = Vector2(1.02112, 1.01442)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Ladder1"]
-position = Vector2(68.7751, 29.9566)
-scale = Vector2(2, 1.98703)
-texture = ExtResource("4_43q1k")
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("4_eyta3")]
-position = Vector2(10584, -1344)
-
-[node name="StaticBody2D2" parent="StaticBody2D2" instance=ExtResource("4_eyta3")]
-position = Vector2(22484, 884)
-
-[node name="StaticBody2D2" parent="StaticBody2D2/StaticBody2D2" instance=ExtResource("4_eyta3")]
-position = Vector2(17734, -2229)
-rotation = 1.5708
-scale = Vector2(0.660398, 2.07699)
-
-[node name="StaticBody2D3" parent="StaticBody2D2/StaticBody2D2" instance=ExtResource("4_eyta3")]
-position = Vector2(19567, -3539.99)
-rotation = 1.5708
-scale = Vector2(1, 1.97302)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("5_8jsco")]
-position = Vector2(18171, 6059)
-scale = Vector2(-4.3176, 0.204608)
-
-[node name="StaticBody2D3" parent="StaticBody2D3" instance=ExtResource("5_8jsco")]
-position = Vector2(2164.86, 10942.9)
-scale = Vector2(-3.69434, -2.15322)
-
-[node name="StaticBody2D3" parent="StaticBody2D3/StaticBody2D3" instance=ExtResource("5_8jsco")]
-position = Vector2(1603.69, -13843.5)
-scale = Vector2(-0.641321, 0.964198)
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("5_8jsco")]
-position = Vector2(31291, -3966)
-
-[node name="StaticBody2D4" parent="StaticBody2D4" instance=ExtResource("5_8jsco")]
-position = Vector2(10184, 642)
-
-[node name="StaticBody2D5" parent="." instance=ExtResource("2_vtp5b")]
-position = Vector2(8054, -9944)
-scale = Vector2(0.563841, 0.852162)
-
-[node name="TriggeredPlatform_V" parent="." instance=ExtResource("6_7euit")]
-position = Vector2(15234, -2851)
-scale = Vector2(1.72149, 1.29442)
-
-[node name="TriggeredPlatform_H" parent="." instance=ExtResource("7_27ivp")]
-position = Vector2(16117, -1397)
-scale = Vector2(1.721, 1.294)
-
-[node name="MovingPlatformH" parent="." instance=ExtResource("9_43q1k")]
-position = Vector2(22050, -1888)
-scale = Vector2(1.721, 1.294)
-
-[node name="MovingPlatformH" parent="MovingPlatformH" instance=ExtResource("9_43q1k")]
-position = Vector2(837.304, 124.42)
-scale = Vector2(1.721, 1.294)
-
-[node name="MovingPlatformH" parent="MovingPlatformH/MovingPlatformH" instance=ExtResource("9_43q1k")]
-position = Vector2(1187.1, -47.7773)
-scale = Vector2(1.721, 1.294)
-
-[node name="TrapPlatform" parent="." instance=ExtResource("10_ay3kv")]
-position = Vector2(25816, -1489)
-scale = Vector2(1.721, 1.294)
-
-[node name="TrapPlatform" parent="TrapPlatform" instance=ExtResource("10_ay3kv")]
-position = Vector2(2931.44, 428.903)
-scale = Vector2(1.721, 1.294)
-
-[node name="GunPickup" parent="." instance=ExtResource("11_j06bu")]
-position = Vector2(12944, 2437)
-scale = Vector2(0.167427, 0.213126)
-collision_layer = 8
-collision_mask = 0
-
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 scale = Vector2(5, 5)
 tile_set = ExtResource("13_ay3kv")
 format = 2
@@ -188,11 +42,34 @@ layer_3/tile_data = PackedInt32Array(-524296, 917504, 30, -458760, 917504, 31, -
 
 [node name="Background" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(4320, -429)
+position = Vector2(4400, -419)
 scale = Vector2(13.5271, 6.21741)
 texture = ExtResource("14_u50l4")
 
-[connection signal="area_entered" from="CharacterBody2D/LadderDetector" to="CharacterBody2D" method="_on_ladder_detector_area_entered"]
-[connection signal="area_exited" from="CharacterBody2D/LadderDetector" to="CharacterBody2D" method="_on_ladder_detector_area_exited"]
-[connection signal="body_entered" from="Ladder1" to="CharacterBody2D" method="_on_ladder_1_body_entered"]
-[connection signal="body_exited" from="Ladder1" to="CharacterBody2D" method="_on_ladder_1_body_exited"]
+[node name="Boar" parent="." groups=["player"] instance=ExtResource("3_7102m")]
+position = Vector2(10516, 240)
+
+[node name="drabina" parent="." groups=["player"] instance=ExtResource("3_vtp5b")]
+position = Vector2(2881, 353)
+
+[node name="GunPickup" parent="." groups=["player"] instance=ExtResource("11_j06bu")]
+process_mode = 1
+position = Vector2(1675, 0.999997)
+scale = Vector2(0.167427, 0.213126)
+collision_layer = 8
+collision_mask = 4
+
+[node name="Snail" parent="." groups=["player"] instance=ExtResource("7_w14rk")]
+position = Vector2(690, 298)
+collision_layer = 2
+
+[node name="Snail2" parent="." groups=["player"] instance=ExtResource("7_w14rk")]
+position = Vector2(5882, 377)
+collision_layer = 2
+
+[node name="SmallBee" parent="." groups=["player"] instance=ExtResource("9_4xi00")]
+position = Vector2(4932, -1334)
+
+[node name="Snail3" parent="." groups=["player"] instance=ExtResource("7_w14rk")]
+position = Vector2(7907, 374)
+collision_layer = 2

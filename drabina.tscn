@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://nemxmwemc51a"]
+[gd_scene load_steps=3 format=3 uid="uid://nemxmwemc51a"]
+
+[ext_resource type="Texture2D" uid="uid://34nfwb7356g5" path="res://ladder.png.png" id="1_la6sc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kacqa"]
 size = Vector2(71, 279)
@@ -10,6 +12,7 @@ position = Vector2(65.5, 11.5)
 shape = SubResource("RectangleShape2D_kacqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(39.5, 3)
+position = Vector2(39, 10)
 rotation = -3.14159
-scale = Vector2(0.22, 1.527)
+scale = Vector2(10.23, 12.767)
+texture = ExtResource("1_la6sc")

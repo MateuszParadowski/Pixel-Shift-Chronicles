@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0rwm1fkkm5aa"]
+
+[ext_resource type="Script" uid="uid://csi1e3y46q7c0" path="res://logo_intro.gd" id="1_3ve5f"]
+[ext_resource type="Texture2D" uid="uid://b7vrtiro2ifyj" path="res://Studio BUNBUN logo.png" id="2_g27cq"]
+
+[node name="LogoIntro" type="Node2D"]
+script = ExtResource("1_3ve5f")
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(592, 318.375)
+scale = Vector2(0.583854, 0.597454)
+texture = ExtResource("2_g27cq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
